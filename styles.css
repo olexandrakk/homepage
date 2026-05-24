@@ -260,3 +260,105 @@ body {
 .additional-info__languages-item {
   color: var(--secondary-text-color);
 }
+
+.bulka-drop-item {
+  position: fixed;
+  top: -50px;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  animation: bulkaFall linear forwards;
+}
+
+@keyframes bulkaFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#bulka-trigger {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#bulka-trigger:hover {
+  color: var(--text-decoration-color);
+  transform: scale(1.02);
+}
+
+#bulka-trigger::after {
+  content: '\1F43E (Click me!)';
+  font-size: 16px;
+  color: var(--text-decoration-color);
+  position: absolute;
+  top: 50%;
+  left: 105%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+#bulka-trigger:hover::after {
+  opacity: 1;
+}
+
+.peeking-cat-container {
+  position: fixed;
+  bottom: -40px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.peeking-cat-container:hover {
+  transform: translateY(-40px);
+}
+
+.peeking-cat {
+  font-size: 65px;
+  cursor: pointer;
+}
+
+.peeking-cat-bubble {
+  background-color: var(--text-decoration-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: -5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 80px;
+  right: -10px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  pointer-events: none;
+}
+
+.peeking-cat-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 35px;
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: var(--text-decoration-color) transparent transparent transparent;
+}
+
+.peeking-cat-container:hover .peeking-cat-bubble {
+  opacity: 1;
+}
