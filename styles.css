@@ -294,7 +294,7 @@ body {
 }
 
 #bulka-trigger::after {
-  content: ' 🐾 (Click me!)';
+  content: '\1F43E (Click me!)';
   font-size: 16px;
   color: var(--text-decoration-color);
   position: absolute;
