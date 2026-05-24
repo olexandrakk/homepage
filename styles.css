@@ -260,3 +260,23 @@ body {
 .additional-info__languages-item {
   color: var(--secondary-text-color);
 }
+
+.bulka-drop-item {
+  position: fixed;
+  top: -50px;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  animation: bulkaFall linear forwards;
+}
+
+@keyframes bulkaFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
